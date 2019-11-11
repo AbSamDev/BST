@@ -12,6 +12,7 @@ class bstNode{
 	//	bstNode *parent;
 	
 	insert(int data);
+	delete(int data);
 };
 
 bstNode :: inserter(int data){

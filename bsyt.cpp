@@ -34,11 +34,11 @@ node* insert(int x, node* t)
         return t;
     }
 
-int search(int d, tNode *t=root){
+tNode search(int d, tNode *t=root){
 	if(t==Null)
 	return 0;
 	else if(t->data==d)
-	return 1;
+	return t;
 	else{
 		if(t->data<d)
 		search(d,t->right);
@@ -53,6 +53,15 @@ int minimum(tNode *t=root){
 	return 1;
 	else{
 		minimum(t->left);
+	}
+}
+	int maximum(tNode *t=root){
+	if(t==Null)
+	return 0;
+	else if(t->right==NUll)
+	return 1;
+	else{
+		maximum(t->right);
 	}
 }
 };

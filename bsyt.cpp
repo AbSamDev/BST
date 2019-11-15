@@ -64,4 +64,19 @@ int minimum(tNode *t=root){
 		maximum(t->right);
 	}
 }
+int insert(int x, node* t){ 
+  // step 1 of the above algorithm  
+  if( n->right != NULL ) 
+    return minValue(n->right); 
+  
+  // step 2 of the above algorithm 
+  struct node *p = n->parent; 
+  while(p != NULL && n == p->right) 
+  { 
+     n = p; 
+     p = p->parent; 
+  } 
+  return p; 
+} 
+
 };

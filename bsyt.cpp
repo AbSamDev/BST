@@ -65,3 +65,18 @@ int minimum(tNode *t=root){
 	}
 }
 };
+int main(){
+	BST b;
+	b.root=b.insert(3, b.root);
+	b.insert(1, b.root);
+	b.insert(7, b.root);
+	b.insert(1, b.root);
+	b.insert(4, b.root);
+	b.insert(2, b.root);
+	b.insert(0, b.root);
+	b.test();
+
+	return 0;
+	
+
+}

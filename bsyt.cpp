@@ -8,22 +8,23 @@ class tNode
 {
 public:
     int data;
-    tNode * Left;
-    tNode * Right;
-    //tNode * Parent;
+    tNode *left;
+    tNode *right;
     };
 class BST{
-	tNode *root;
 	public:
+		tNode *root;
+	public:
+	
 		BST(){
-			root=Null;
+			root=NULL;
 		}
 
-node* insert(int x, node* t)
+tNode* insert(int x, tNode* t)
     {
         if(t == NULL)
         {
-            t = new node;
+            t = new tNode;
             t->data = x;
             t->left = t->right = NULL;
         }
@@ -34,9 +35,9 @@ node* insert(int x, node* t)
         return t;
     }
 
-tNode search(int d, tNode *t=root){
-	if(t==Null)
-	return 0;
+tNode *search(int d, tNode *t){
+	if(t==NULL)
+	return t;
 	else if(t->data==d)
 	return t;
 	else{
@@ -46,23 +47,26 @@ tNode search(int d, tNode *t=root){
 		search(d,t->left);
 	}
 }
-int minimum(tNode *t=root){
-	if(t==Null)
+int minimum(tNode *t){
+	if(t==NULL)
 	return 0;
-	else if(t->left==NUll)
-	return 1;
+	else if(t->left==NULL)
+	return t->data;
 	else{
 		minimum(t->left);
 	}
 }
-	int maximum(tNode *t=root){
-	if(t==Null)
-	return 0;
-	else if(t->right==NUll)
-	return 1;
+int maximum(tNode *t){
+	if(t==NULL)
+	  return 0;
+	else if(t->right==NULL)
+	  return t->data;
 	else{
 		maximum(t->right);
 	}
+}
+void test(){
+	cout<<root->data;
 }
 };
 int main(){
@@ -74,8 +78,9 @@ int main(){
 	b.insert(4, b.root);
 	b.insert(2, b.root);
 	b.insert(0, b.root);
-	b.test();
-
+	b.insert(9, b.root);
+    cout<<b.maximum(b.root)<<endl;
+    cout<<b.minimum(b.root);
 	return 0;
 	
 

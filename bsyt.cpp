@@ -65,6 +65,27 @@ int maximum(tNode *t){
 		maximum(t->right);
 	}
 }
+void inOrder(tNode *t){
+	if(t != NULL){
+		inOrder(t->left);
+		cout<<t->data<<" ";
+		inOrder(t->right);
+	}
+}
+void preOrder(tNode *t){
+	if(t != NULL){
+		cout<<t->data<<" ";
+		inOrder(t->left);
+		inOrder(t->right);
+	}
+}
+void postOrder(tNode *t){
+	if(t != NULL){
+		inOrder(t->left);
+		inOrder(t->right);
+		cout<<t->data<<" ";
+	}
+}
 void test(){
 	cout<<root->data;
 }
@@ -79,8 +100,14 @@ int main(){
 	b.insert(2, b.root);
 	b.insert(0, b.root);
 	b.insert(9, b.root);
-    cout<<b.maximum(b.root)<<endl;
-    cout<<b.minimum(b.root);
+	b.inOrder(b.root);
+	cout<<endl;
+	b.preOrder(b.root);
+	cout<<endl;
+	b.postOrder(b.root);
+	cout<<endl;
+    cout<<"max is:"<<b.maximum(b.root)<<endl;
+    cout<<"min is:"<<b.minimum(b.root);
 	return 0;
 	
 

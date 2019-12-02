@@ -75,14 +75,14 @@ void inOrder(tNode *t){
 void preOrder(tNode *t){
 	if(t != NULL){
 		cout<<t->data<<" ";
-		inOrder(t->left);
-		inOrder(t->right);
+		preOrder(t->left);
+		preOrder(t->right);
 	}
 }
 void postOrder(tNode *t){
 	if(t != NULL){
-		inOrder(t->left);
-		inOrder(t->right);
+		postOrder(t->left);
+		postOrder(t->right);
 		cout<<t->data<<" ";
 	}
 }
